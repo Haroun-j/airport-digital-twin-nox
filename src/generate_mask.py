@@ -195,7 +195,7 @@ def run_generate_mask(config_path: str, checkpoint_path: str,
     print("="*60)
     print(f"""
 import sys, torch
-sys.path.insert(0, r"{os.path.join(base_dir, 'prof_files')}")
+sys.path.insert(0, r"{os.path.join(base_dir, 'provided')}")
 from wind import MassConsistentWindSolverNumerical
 
 mask = torch.load(r"{output_path}").cuda()        # (1,1,{domain['grid_nz']},{domain['grid_ny']},{domain['grid_nx']})

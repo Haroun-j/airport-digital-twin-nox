@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# produced by the pipeline and the notebooks
+data/
+data_sources/
+checkpoints/
+outputs/
+nox_dispersion_run/
+config_runtime.yaml
+config_runtime_preparation.json
+*.pt
+*.h5
+*.npy
+*.zip

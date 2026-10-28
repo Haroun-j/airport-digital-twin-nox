@@ -1,4 +1,4 @@
-﻿"""
+"""
 Training script for the airport DeepSDF model.
 """
 
