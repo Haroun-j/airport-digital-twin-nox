@@ -109,7 +109,10 @@ def _spatialite_blob_to_wkb(blob: Any) -> bytes:
         wkb_bytes = data[marker_idx + 1 :]
         if wkb_bytes and wkb_bytes[-1] == 0xFE:
             wkb_bytes = wkb_bytes[:-1]
-        return wkb_bytes
+        # SpatiaLite keeps the byte-order flag once in the header (data[1]) and does
+        # not repeat it in front of the geometry, so shapely cannot read the payload
+        # as plain WKB. Put the flag back.
+        return bytes([data[1]]) + wkb_bytes
 
     return data
 
